@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cardboard type:</strong>
+  <%= @cardboard.cardboard_type %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @cardboard.price %>
+</p>
+
+<%= link_to 'Edit', edit_cardboard_path(@cardboard) %> |
+<%= link_to 'Back', cardboards_path %>

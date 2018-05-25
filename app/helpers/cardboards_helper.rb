@@ -1,0 +1,2 @@
+module CardboardsHelper
+end

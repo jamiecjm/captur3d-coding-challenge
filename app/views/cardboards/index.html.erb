@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cardboards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cardboard type</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cardboards.each do |cardboard| %>
+      <tr>
+        <td><%= cardboard.cardboard_type %></td>
+        <td><%= cardboard.price %></td>
+        <td><%= link_to 'Show', cardboard %></td>
+        <td><%= link_to 'Edit', edit_cardboard_path(cardboard) %></td>
+        <td><%= link_to 'Destroy', cardboard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cardboard', new_cardboard_path %>

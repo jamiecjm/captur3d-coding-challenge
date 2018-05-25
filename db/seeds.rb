@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Cardboard.create(cardboard_type: 'Premium', price: 30)
+Cardboard.create(cardboard_type: 'High Quality', price: 20)

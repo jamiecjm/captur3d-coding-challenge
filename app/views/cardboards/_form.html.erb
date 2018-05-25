@@ -1,0 +1,27 @@
+<%= form_with(model: cardboard, local: true) do |form| %>
+  <% if cardboard.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cardboard.errors.count, "error") %> prohibited this cardboard from being saved:</h2>
+
+      <ul>
+      <% cardboard.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cardboard_type %>
+    <%= form.text_field :cardboard_type, id: :cardboard_cardboard_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :cardboard_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

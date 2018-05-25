@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180525133045) do
+ActiveRecord::Schema.define(version: 20180525134935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cardboards", force: :cascade do |t|
+    t.string "cardboard_type"
+    t.decimal "price", precision: 10, scale: 2, default: "0.0", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "models", force: :cascade do |t|
     t.string "email", default: "", null: false

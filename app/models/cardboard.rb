@@ -1,0 +1,2 @@
+class Cardboard < ApplicationRecord
+end
