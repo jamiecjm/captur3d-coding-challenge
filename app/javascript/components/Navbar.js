@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+
 class Navbar extends React.Component {
 
   constructor(props){
@@ -20,7 +21,7 @@ class Navbar extends React.Component {
       <React.Fragment>
 
       <nav className="navbar navbar-default">
-        <div className="container-fluid">
+        <div className="container">
           <div className="navbar-header">
             <a className="navbar-brand" href="/">CAPTUR3D Code Challenge</a>
           </div>
