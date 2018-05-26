@@ -4,7 +4,7 @@ class CardboardsController < ApplicationController
   # GET /cardboards
   # GET /cardboards.json
   def index
-    @cardboards = Cardboard.all
+    @cardboards = Cardboard.all.map{|cardboard| cardboard.attributes.merge(url: cardboard_path(cardboard.id))}
   end
 
   # GET /cardboards/1
