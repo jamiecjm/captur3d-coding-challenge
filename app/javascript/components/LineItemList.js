@@ -1,16 +1,32 @@
 import React from "react"
 import PropTypes from "prop-types"
 import LineItem from './LineItem'
+import RemoveLineItem from './RemoveLineItem'
 class LineItemList extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      line_items: this.props.line_items
+    }
+  }
+
+  handleClick(line_item_id){
+    alert(line_item_id)
+  }
+
   render () {
     return (
       <React.Fragment>
       <div className='cart-line-item-list'>
         {this.props.line_items.map(function(line_item){
           return(
-            <LineItem line_item={line_item} key={line_item.id}/>
+            <div className='cart-line-item' key={line_item.id}>
+              <LineItem line_item={line_item}/>
+              <RemoveLineItem onCrossClick={this.handleClick} line_item_id={line_item.id}/>
+            </div>
           )
-        })}
+        }, this)}
       </div>
       </React.Fragment>
     );
