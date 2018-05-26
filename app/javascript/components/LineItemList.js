@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import LineItem from './LineItem'
-import RemoveLineItem from './RemoveLineItem'
 class LineItemList extends React.Component {
 
   constructor(props){
@@ -24,16 +23,24 @@ class LineItemList extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <div className='cart-line-item-list'>
-          {this.props.line_items.map(function(line_item){
-            return(
-              <div className='cart-line-item' key={line_item.id}>
-                <LineItem line_item={line_item}/>
-                <RemoveLineItem onCrossClick={this.handleClick} line_item_id={line_item.id}/>
-              </div>
-            )
-          }, this)}
-        </div>
+        <table className='table cart-line-item-list'>
+          <tbody>
+            <tr>
+              <td>Cardboard Type</td>
+              <td>Quantity</td>
+              <td>Unit Price</td>
+              <td>Subtotal</td>
+              <td></td>
+            </tr>
+            {this.props.line_items.map(function(line_item){
+              return(
+                <tr className='cart-line-item' key={line_item.id}>
+                  <LineItem line_item={line_item} onCrossClick={this.handleClick}/>
+                </tr>
+              )
+            }, this)}
+          </tbody>
+        </table>
       </React.Fragment>
     );
   }

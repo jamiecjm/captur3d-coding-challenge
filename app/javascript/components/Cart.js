@@ -7,6 +7,7 @@ class Cart extends React.Component {
   render () {
     return (
       <React.Fragment>
+        <h1>Your Cart</h1>
         <LineItemList line_items={this.props.line_items} />
       </React.Fragment>
     );

@@ -3,14 +3,20 @@ import PropTypes from "prop-types"
 
 class LineItem extends React.Component {
 
+  handleClick(){
+    this.props.onCrossClick(this.props.line_item.id);
+  }
+
   render () {
     return (
       <React.Fragment>
 
-        <h3>{this.props.line_item.cardboard_type}</h3>
-        <p>{this.props.line_item.quantity}</p>
-        <p>{this.props.line_item.price}</p>
-
+        <td>{this.props.line_item.cardboard_type}</td>
+        <td>{this.props.line_item.quantity}</td>
+        <td>{this.props.line_item.cardboard_price}</td>
+        <td>{this.props.line_item.price}</td>
+        <td className='glyphicon glyphicon-remove'
+        onClick={this.handleClick.bind(this)}></td>
       </React.Fragment>
     );
   }
