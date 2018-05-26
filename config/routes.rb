@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'cart', to: 'cart#show', as: 'cart'
+
   root 'cardboards#index'
 
   devise_for :users

@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import AddToCart from './AddToCart'
+import Navbar from './Navbar'
 
 class CardboardShow extends React.Component {
 
@@ -19,7 +20,7 @@ class CardboardShow extends React.Component {
     var line_item = {cardboard_id: this.props.id, quantity: this.state.quantity}
     $.post('/line_items',{
       line_item: line_item
-    })
+    });
   }
 
   render () {
