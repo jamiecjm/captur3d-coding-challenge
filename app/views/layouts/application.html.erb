@@ -10,8 +10,9 @@
   </head>
 
   <body>
+      <%= react_component 'Navbar', current_order: current_order %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-    <%= yield %>
+      <%= yield %>
   </body>
 </html>
