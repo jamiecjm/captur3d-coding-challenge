@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20180526072620) do
   create_table "line_items", force: :cascade do |t|
     t.integer "order_id"
     t.integer "cardboard_id"
-    t.integer "quantity"
+    t.integer "quantity", default: 0
     t.decimal "price", precision: 10, scale: 2, default: "0.0", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20180526072620) do
     t.string "email"
     t.integer "item_count", default: 0, null: false
     t.decimal "item_total", precision: 10, scale: 2, default: "0.0", null: false
-    t.decimal "shipment_total", precision: 10, scale: 2, default: "0.0", null: false
+    t.decimal "shipment_total", precision: 10, scale: 2, default: "30.0", null: false
     t.decimal "promo_total", precision: 10, scale: 2, default: "0.0", null: false
     t.decimal "grand_total", precision: 10, scale: 2, default: "0.0", null: false
     t.integer "order_status", default: 0
