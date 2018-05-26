@@ -18,6 +18,11 @@ class LineItemsController < ApplicationController
   end
 
   def destroy
+    @line_item.destroy
+    respond_to do |format|
+      format.html { redirect_to cart_url, notice: 'Item was successfully removed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
