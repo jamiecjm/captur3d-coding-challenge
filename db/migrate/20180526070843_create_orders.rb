@@ -7,7 +7,7 @@ class CreateOrders < ActiveRecord::Migration[5.1]
       t.decimal :shipment_total, precision: 10, scale: 2, default: "0.0", null: false
       t.decimal :promo_total, precision: 10, scale: 2, default: "0.0", null: false
       t.decimal :grand_total, precision: 10, scale: 2, default: "0.0", null: false
-      t.integer :order_status
+      t.integer :order_status, default: 0
       t.timestamps
     end
 
