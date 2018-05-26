@@ -15,8 +15,10 @@ class LineItem extends React.Component {
         <td>{this.props.line_item.quantity}</td>
         <td>{this.props.line_item.cardboard_price}</td>
         <td>{this.props.line_item.price}</td>
-        <td className='glyphicon glyphicon-remove'
-        onClick={this.handleClick.bind(this)}></td>
+        <td>
+          <a className='glyphicon glyphicon-remove'
+          onClick={this.handleClick.bind(this)}></a>
+        </td>
       </React.Fragment>
     );
   }

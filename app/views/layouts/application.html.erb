@@ -12,8 +12,7 @@
   <body>
       <%= react_component 'Navbar', current_order: current_order %>
       <main class='container'>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        <%= flash_messages %>
         <%= yield %>
       </main>
 
