@@ -23,7 +23,6 @@ class AddToCart extends React.Component {
           value={this.props.quantity}
           onChange={this.handleChange.bind(this)}/>
           <input name='cardboard_id' type='hidden' value={this.props.id}/>
-          <input name='price' type='hidden' value={this.props.price}/>
 
           <input type='submit' value='Add to Cart'/>
 

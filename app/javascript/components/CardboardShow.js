@@ -16,6 +16,10 @@ class CardboardShow extends React.Component {
   }
 
   handleFormSubmit(){
+    var line_item = {cardboard_id: this.props.id, quantity: this.state.quantity}
+    $.post('/line_items',{
+      line_item: line_item
+    })
   }
 
   render () {
