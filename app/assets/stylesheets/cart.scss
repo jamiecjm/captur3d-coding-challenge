@@ -16,12 +16,13 @@ table h3{
 }
 
 .cart-meta{
-  float: right;
+  width: auto;
+  margin: 80px 0 30px;
 }
 
 .cart-meta-text{
   width: 150px;
-  display: inline-block;
+  padding: 5px 0;
 }
 
 .clear{

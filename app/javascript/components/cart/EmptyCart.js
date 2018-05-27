@@ -10,7 +10,7 @@ class EmptyCart extends React.Component {
         <div className='alert alert-info'>
           There is no item in your cart
         </div>
-        <a href='/'>Continue Shopping</a>
+        <a href='/' className='btn btn-default'>Continue Shopping</a>
       </React.Fragment>
     );
   }
