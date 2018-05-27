@@ -7,8 +7,6 @@ class LineItem < ApplicationRecord
 
   before_save :calc_price
 
-  private
-
   def calc_price
     self.price = cardboard.price * quantity
   end

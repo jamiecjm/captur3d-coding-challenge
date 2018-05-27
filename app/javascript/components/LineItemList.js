@@ -23,17 +23,6 @@ class LineItemList extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <table className='table cart-line-item-list'>
-          <thead>
-            <tr>
-              <th>Cardboard Type</th>
-              <th>Quantity</th>
-              <th>Unit Price</th>
-              <th>Subtotal</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
             {this.props.line_items.map(function(line_item){
               return(
                 <tr className='cart-line-item' key={line_item.id}>
@@ -41,8 +30,6 @@ class LineItemList extends React.Component {
                 </tr>
               )
             }, this)}
-          </tbody>
-        </table>
       </React.Fragment>
     );
   }
