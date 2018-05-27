@@ -14,7 +14,19 @@ class OrdersController < ApplicationController
   # GET /orders/1.json
   def show
     if @order
-      @line_items = @order.line_items
+      @line_items = @order.line_items.map{|line_item| line_item.attributes.merge(
+        {
+          cardboard_type: line_item.cardboard.cardboard_type,
+          cardboard_price: line_item.cardboard.price
+        }
+      )}
+
+      @order_metas = [
+        {title: 'Subtotal', value: @order.item_total},
+        {title: 'Discount', value: @order.promo_total},
+        {title: 'Shipping Fee', value: @order.shipment_total},
+        {title: 'Total', value: @order.grand_total}
+      ]
     else
       redirect_back fallback_location: '/', notice: 'Order was not found'
     end
