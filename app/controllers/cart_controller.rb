@@ -3,7 +3,7 @@ class CartController < ApplicationController
   before_action :authenticate_user!, only: [:checkout, :payment]
 
   def show
-    @line_items = current_order.line_items.map{|line_item| line_item.attributes.merge(
+    @line_items = current_line_items.map{|line_item| line_item.attributes.merge(
       {
         cardboard_id: line_item.cardboard.id,
         cardboard_type: line_item.cardboard.cardboard_type,
@@ -11,12 +11,7 @@ class CartController < ApplicationController
       }
     )}
 
-    @cart_metas = [
-      {title: 'Subtotal', value: current_order.item_total},
-      {title: 'Discount', value: current_order.promo_total},
-      {title: 'Shipping Fee', value: current_order.shipment_total},
-      {title: 'Total', value: current_order.grand_total}
-    ]
+    @cart_metas = current_cart_metas
 
   end
 

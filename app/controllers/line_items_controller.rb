@@ -15,14 +15,24 @@ class LineItemsController < ApplicationController
   end
 
   def update
+    if @line_item.update(line_item_params)
+      render json: {line_items: current_line_items, cart_metas: current_cart_metas}
+    else
+      render json: @line_item.errors, status: :unprocessable_entity
+    end
   end
 
   def destroy
     @line_item.destroy
-    respond_to do |format|
-      format.html { redirect_to cart_url, notice: 'Item was successfully removed.' }
-      format.json { head :no_content }
+    if @line_item.destroyed?
+      render json: {line_items: current_line_items, cart_metas: current_cart_metas}
+    else
+      render json: @line_item.errors, status: :unprocessable_entity
     end
+    # respond_to do |format|
+    #   format.html { redirect_to cart_url, notice: 'Item was successfully removed.' }
+    #   format.json { head :no_content }
+    # end
   end
 
   private

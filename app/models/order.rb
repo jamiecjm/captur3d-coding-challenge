@@ -36,6 +36,7 @@ class Order < ApplicationRecord
   end
 
   def calc_shipment_total
+    self.shipment_total = 30
     promos = Promotion.where(promotion_type: 'Free Shipping')
     promos.each do |promo|
       if promotion_applicable?(promo)

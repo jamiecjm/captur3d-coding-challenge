@@ -5,21 +5,13 @@ class LineItemList extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {
-      line_items: this.props.line_items
-    }
 
     this.handleInputChange = this.handleInputChange.bind(this)
+    this.handleClick= this.handleClick.bind(this)
   }
 
   handleClick(line_item_id){
-    var delete_url = '/line_items/'+line_item_id
-    $.ajax({
-        url: delete_url,
-        type: 'DELETE',
-        success: function(result) {
-        }
-    });
+    this.props.onCrossClick(line_item_id);
   }
 
   handleInputChange(obj){
@@ -29,7 +21,7 @@ class LineItemList extends React.Component {
   render () {
     return (
       <React.Fragment>
-            {this.state.line_items.map(function(line_item){
+            {this.props.line_items.map(function(line_item){
               return(
                 <tr className='cart-line-item' key={line_item.id}>
                   <LineItem line_item={line_item}

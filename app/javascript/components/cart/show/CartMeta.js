@@ -18,7 +18,7 @@ class CartMeta extends React.Component {
             })}
           </tbody>
         </table>
-        <a href='/checkout' className='btn btn-default'>Proceed to Checkout</a>
+        <a href='/checkout' className='btn btn-default'>Place Order</a>
       </React.Fragment>
     );
   }

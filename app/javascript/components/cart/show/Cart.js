@@ -10,6 +10,9 @@ class Cart extends React.Component {
       cart_metas: this.props.cart_metas,
       line_items: this.props.line_items
     }
+
+    this.handleInputChange = this.handleInputChange.bind(this)
+    this.handleClick= this.handleClick.bind(this)
   }
 
   handleInputChange(obj){
@@ -17,9 +20,21 @@ class Cart extends React.Component {
     $.ajax({
         url: update_url,
         type: 'PUT',
-        data: obj,
+        data: {line_item: obj},
         success: function(result) {
-        }
+          this.setState(result);
+        }.bind(this)
+    });
+  }
+
+  handleClick(line_item_id){
+    var delete_url = '/line_items/'+line_item_id
+    $.ajax({
+        url: delete_url,
+        type: 'DELETE',
+        success: function(result) {
+          this.setState(result);
+        }.bind(this)
     });
   }
 
@@ -31,6 +46,7 @@ class Cart extends React.Component {
       cart_metas={this.state.cart_metas}
       line_items={this.state.line_items}
       onInputChange={this.handleInputChange}
+      onCrossClick={this.handleClick}
       />
     }
   }
