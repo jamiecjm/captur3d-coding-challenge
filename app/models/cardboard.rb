@@ -14,4 +14,6 @@ class Cardboard < ApplicationRecord
   has_many :line_items
   has_many :orders, through: :line_items
 
+  validates :cardboard_type, uniqueness: true
+
 end
