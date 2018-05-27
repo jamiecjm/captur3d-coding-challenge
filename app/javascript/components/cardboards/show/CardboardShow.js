@@ -27,11 +27,12 @@ class CardboardShow extends React.Component {
       <React.Fragment>
         <div className='cardboard-show-item'>
           <h3>{this.props.cardboard_type}</h3>
-          <p>{this.props.price}</p>
+          <h4>AU ${this.props.price}</h4>
+          <AddToCart quantity={this.state.quantity}
+          onInput={this.handleUserInput.bind(this)}
+          onFormSubmit={this.handleFormSubmit.bind(this)}/>
         </div>
-        <AddToCart quantity={this.state.quantity}
-        onInput={this.handleUserInput.bind(this)}
-        onFormSubmit={this.handleFormSubmit.bind(this)}/>
+        
       </React.Fragment>
     );
   }

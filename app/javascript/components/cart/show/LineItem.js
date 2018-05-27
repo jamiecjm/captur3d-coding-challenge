@@ -43,7 +43,7 @@ class LineItem extends React.Component {
         cardboard_id={this.state.cardboard_id}
         onInputChange={this.handleInputChange}/>
         </td>
-        <td>{this.state.cardboard_price}</td>
+        <td>AU ${this.state.cardboard_price}</td>
         <td>
           <a className='glyphicon glyphicon-remove'
           onClick={this.handleClick}></a>

@@ -2,11 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.cardboard-item{
+.cardboard-item, .cardboard-show-item{
   display: inline-block;
   margin: 10px 20px 10px 0;
   padding: 30px;
   border: 1px solid #eee;
   box-shadow: 0 2px 2px #ccc;
   min-width: 200px;
+}
+
+.cardboard-item h4, .cardboard-show-item h4{
+  margin-bottom: 30px;
 }

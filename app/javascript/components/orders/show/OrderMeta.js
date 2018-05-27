@@ -11,7 +11,7 @@ class OrderMeta extends React.Component {
             return(
               <tr>
                 <th className='cart-meta-text'>{meta.title}</th>
-                <td className='cart-meta-number'>{meta.value}</td>
+                <td className='cart-meta-number'>AU ${Math.abs(meta.value)}</td>
               </tr>
             )
           })}

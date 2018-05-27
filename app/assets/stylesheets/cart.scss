@@ -28,3 +28,17 @@ table h3{
 .clear{
   clear: both;
 }
+
+.cart-line-item-list .form-control{
+  max-width: 100px;
+}
+
+.cart-meta tr:nth-child(2) .cart-meta-number{
+  position: relative;
+}
+
+.cart-meta tr:nth-child(2) .cart-meta-number::before{
+  content: '- ';
+  position: absolute;
+  left: 0;
+}

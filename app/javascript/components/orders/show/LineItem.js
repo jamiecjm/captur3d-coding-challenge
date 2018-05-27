@@ -9,7 +9,7 @@ class LineItem extends React.Component {
 
         <td>{this.props.line_item.cardboard_type}</td>
         <td>{this.props.line_item.quantity}</td>
-        <td>{this.props.line_item.cardboard_price}</td>
+        <td>AU ${this.props.line_item.cardboard_price}</td>
       </React.Fragment>
     );
   }

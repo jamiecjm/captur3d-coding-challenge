@@ -28,8 +28,8 @@ class Cardboard extends React.Component {
       <div className='cardboard-item'>
         <a href={this.props.cardboard.url}>
           <h3>{this.props.cardboard.cardboard_type}</h3>
-          <p>{this.props.cardboard.price}</p>
         </a>
+        <h4>AU ${this.props.cardboard.price}</h4>
         <AddToCart quantity={this.state.quantity}
         onInput={this.handleUserInput.bind(this)}
         onFormSubmit={this.handleFormSubmit.bind(this)}/>

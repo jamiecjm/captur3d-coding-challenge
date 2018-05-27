@@ -12,7 +12,7 @@ class CartMeta extends React.Component {
               return(
                 <tr key={meta.title}>
                   <th className='cart-meta-text'>{meta.title}</th>
-                  <td className='cart-meta-number'>{meta.value}</td>
+                  <td className='cart-meta-number'>AU ${Math.abs(meta.value)}</td>
                 </tr>
               )
             })}

@@ -18,13 +18,13 @@ class AddToCart extends React.Component {
     return (
       <React.Fragment>
       <div>
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <input name='quantity' type='number' min='1'
+        <form className='form-inline' onSubmit={this.handleSubmit.bind(this)}>
+          <input className='form-control' name='quantity' type='number' min='1'
           value={this.props.quantity}
           onChange={this.handleChange.bind(this)}/>
           <input name='cardboard_id' type='hidden' value={this.props.id}/>
 
-          <input type='submit' value='Add to Cart'/>
+          <input type='submit' value='Add to Cart' className='btn btn-default'/>
 
         </form>
       </div>

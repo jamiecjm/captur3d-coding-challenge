@@ -33,11 +33,12 @@
         </ul>
       </div>
     </nav>
+    <%=react_component 'PromotionBanner', promotions: Promotion.all%>
 
     <main class='container'>
       <%= flash_messages %>
       <%= yield %>
     </main>
-    
+
   </body>
 </html>
