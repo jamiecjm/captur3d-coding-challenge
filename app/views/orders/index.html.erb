@@ -1,23 +1,2 @@
 <h1>Your Orders</h1>
-
-<table class='table'>
-  <thead>
-    <tr>
-      <th>Order number</th>
-      <th>No. of Items</th>
-      <th>Total</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @orders.each do |order| %>
-      <tr>
-        <td>#<%=order.id%></td>
-        <td><%=order.item_count%></td>
-        <td><%=order.grand_total%></td>
-        <td><%= link_to 'Show', user_order_path(user_id: current_user, id: order) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%=react_component 'order_index/Orders', orders: @orders, current_user: current_user%>
