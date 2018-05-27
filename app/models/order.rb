@@ -3,6 +3,7 @@ class Order < ApplicationRecord
   belongs_to :user, optional: true
   has_many :line_items, dependent: :destroy
   has_many :cardboards, through: :line_items
+  has_and_belongs_to_many :promotions
 
   enum order_status: {'In Progress': 0, 'Completed': 1}
 

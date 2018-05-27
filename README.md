@@ -13,7 +13,9 @@ A simple VR cardboard ordering system built with Ruby on Rails and ReactJS.
 
 * Payment is not needed
 * Billing and shipping addresses are not needed
-* Shipping fees is fixed at 30 AUD except when promotion is applicable
+* Shipping fee is fixed at 30 AUD except when promotion is applied
+* Campaign has no end date
+* Promotion is applicable to order level only (not applicable to individual products)
 
 ### User Stories
 
@@ -72,7 +74,7 @@ $ rails db:seed
 ## Built With
 
 * Ruby on Rails - The web framework
-* ReactJS - Javascript Library for user interface
+* ReactJS - Javascript library for user interface
 * Bootstrap - Front-end library
 
 ## Author
