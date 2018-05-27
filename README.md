@@ -15,7 +15,7 @@ A simple VR cardboard ordering system built with Ruby on Rails and ReactJS.
 * Billing and shipping addresses are not needed
 * Shipping fee is fixed at 30 AUD except when promotion is applied
 * Campaign has no end date
-* Promotion is applicable to order level only (not applicable to individual products)
+* Promotions are automatically applied
 
 ### User Stories
 

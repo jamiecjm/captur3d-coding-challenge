@@ -19,9 +19,16 @@ class LineItem < ApplicationRecord
   validates :order_id, uniqueness: { scope: :cardboard_id }
 
   before_save :calc_price
+  after_save :recalculate_order_price
+  after_destroy :recalculate_order_price
 
   def calc_price
     self.price = cardboard.price * quantity
+  end
+
+  def recalculate_order_price
+    order.calc_all_price
+    order.save
   end
 
 end

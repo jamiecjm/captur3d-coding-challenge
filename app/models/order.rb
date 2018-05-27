@@ -23,8 +23,6 @@ class Order < ApplicationRecord
 
   enum order_status: {'In Progress': 0, 'Completed': 1}
 
-  before_save :price_calculation
-
   def calc_item_count
     self.item_count = line_items.sum(:quantity)
   end
@@ -43,7 +41,7 @@ class Order < ApplicationRecord
     self.grand_total = item_total + shipment_total + promo_total
   end
 
-  def price_calculation
+  def calc_all_price
     calc_item_count
     calc_item_total
     calc_shipment_total
