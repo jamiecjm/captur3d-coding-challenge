@@ -32,9 +32,30 @@ class Order < ApplicationRecord
   end
 
   def calc_shipment_total
+    promotions = Promotion.where(promotion_type: 'Free Shipping')
+    promotions.each do |promo|
+      if promotion_applicable?(promo)
+        self.shipment_total = 0
+        break
+      end
+    end
   end
 
   def calc_promo_total
+    # reset discount total
+    self.promo_total = 0
+    promotions = Promotion.where.not(promotion_type: 'Free Shipping')
+    promotions.each do |promo|
+      if promotion_applicable?(promo)
+        if promo.promotion_type == 'Fixed Discount Rate'
+          rate = (promo.discount_amount)/100
+          self.promo_total -= item_total * rate
+        else
+          self.promo_total -= promo.discount_amount
+        end
+        break
+      end
+    end
   end
 
   def calc_grand_total
@@ -47,6 +68,11 @@ class Order < ApplicationRecord
     calc_shipment_total
     calc_promo_total
     calc_grand_total
+  end
+
+  def promotion_applicable?(promotion)
+    order_field = send(promotion.requirement_field)
+    order_field.send(promotion.operator_to_symbol, promotion.requirement_amount)
   end
 
 end
