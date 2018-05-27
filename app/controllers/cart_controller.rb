@@ -9,6 +9,14 @@ class CartController < ApplicationController
         cardboard_price: line_item.cardboard.price
       }
     )}
+
+    @cart_metas = [
+      {title: 'Subtotal', value: current_order.item_total},
+      {title: 'Discount', value: current_order.promo_total},
+      {title: 'Shipping Fee', value: current_order.shipment_total},
+      {title: 'Total', value: current_order.grand_total}
+    ]
+
   end
 
   def checkout

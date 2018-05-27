@@ -7,7 +7,6 @@ class Cardboards extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <h1>Browse Cardboards</h1>
         <CardboardList cardboards={this.props.cardboards}/>
       </React.Fragment>
     );
