@@ -13,10 +13,10 @@ class CartController < ApplicationController
 
   def checkout
     @order = current_order
-    @order.user_id = current_user.id
+    @order.attributes = {user_id: current_user.id, order_status: 'Completed'}
     if @order.save
       session[:order_id] = nil
-      redirect_to user_order_path(user_id: current_user,id: @order), success: 'Order was successfully placed'  
+      redirect_to user_order_path(user_id: current_user,id: @order), success: 'Order was successfully placed'
     else
       redirect_back fallback_location: checkout_path, error: error_message
     end

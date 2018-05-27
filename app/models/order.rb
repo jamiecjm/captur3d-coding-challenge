@@ -4,7 +4,7 @@ class Order < ApplicationRecord
   has_many :line_items, dependent: :destroy
   has_many :cardboards, through: :line_items
 
-  enum order_status: ['In Progress': 0, 'Completed': 1]
+  enum order_status: {'In Progress': 0, 'Completed': 1}
 
   before_save :price_calculation
 
