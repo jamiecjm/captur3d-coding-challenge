@@ -29,8 +29,9 @@ class Navbar extends React.Component {
           </ul>
           <ul className="nav navbar-nav navbar-right">
             <li><a href="/cart"><span className="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-            <li><a href="#"><span className="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a href="/users/sign_up"><span className="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="/users/sign_in"><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a href="#"><span className="glyphicon glyphicon-briefcase"></span> Orders</a></li>
             <li><a href="/users/sign_out" data-method="delete"><span className="glyphicon glyphicon-log-out"></span> Logout</a></li>
           </ul>
         </div>

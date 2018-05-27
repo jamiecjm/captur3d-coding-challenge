@@ -1,4 +1,36 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<h1>Order #<%=@order.id%></h1>
+<table class='table cart-line-item-list'>
+  <thead>
+    <tr>
+      <th>Cardboard Type</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%@line_items.each do |line_item|%>
+      <td><%=line_item.cardboard.cardboard_type%></td>
+      <td><%=line_item.quantity%></td>
+      <td><%=line_item.cardboard.price%></td>
+    <%end%>
+  </tbody>
+</table>
+<div class='cart-meta'>
+  <div>
+    <span class='cart-meta-text'>Subtotal</span>
+    <span class='cart-meta-number'><%=@order.item_total%></span>
+  </div>
+  <div>
+    <span class='cart-meta-text'>Discount</span>
+    <span class='cart-meta-number'><%=@order.promo_total%></span>
+  </div>
+  <div>
+    <span class='cart-meta-text'>Shipping Fee</span>
+    <span class='cart-meta-number'><%=@order.shipment_total%></span>
+  </div>
+  <div>
+    <span class='cart-meta-text'>Total</span>
+    <span class='cart-meta-number'><%=@order.grand_total%></span>
+  </div>
+</div>
+<span class='clear'></span>
