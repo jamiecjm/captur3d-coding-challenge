@@ -3,15 +3,19 @@
 # Table name: orders
 #
 #  id             :bigint(8)        not null, primary key
+#  grand_total    :decimal(10, 2)   default(0.0), not null
 #  item_count     :integer          default(0), not null
 #  item_total     :decimal(10, 2)   default(0.0), not null
-#  shipment_total :decimal(10, 2)   default(30.0), not null
-#  promo_total    :decimal(10, 2)   default(0.0), not null
-#  grand_total    :decimal(10, 2)   default(0.0), not null
 #  order_status   :integer          default("In Progress")
+#  promo_total    :decimal(10, 2)   default(0.0), not null
+#  shipment_total :decimal(10, 2)   default(30.0), not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #  user_id        :integer
+#
+# Indexes
+#
+#  index_orders_on_user_id  (user_id)
 #
 
 class Order < ApplicationRecord
