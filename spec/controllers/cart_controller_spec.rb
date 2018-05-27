@@ -49,17 +49,6 @@ RSpec.describe CartController, type: :controller do
         # expect(flash[:success]).to match(/^Order was successfully placed/)
       end
     end
-    # context 'when a user has signed in' do
-    #
-    # end
-    # it 'assigns @cardboard' do
-    #   get :show, params: {id: @cardboard1.id}
-    #   expect(assigns(:cardboard)).to eq(@cardboard1)
-    # end
-    # it 'renders the #show template' do
-    #   get :show, params: {id: @cardboard1.id}
-    #   expect(response).to render_template :show
-    # end
   end
 
 end
