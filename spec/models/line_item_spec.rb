@@ -48,12 +48,12 @@ RSpec.describe LineItem, type: :model do
     end
   end
 
-  context 'triggers order price calculation if' do
-    it 'is saved' do
+  context 'triggers order price calculation when' do
+    it 'line_item is saved' do
       expect(@order.grand_total).to_not eq(0)
     end
 
-    it 'is destroyed' do
+    it 'line_item is destroyed' do
       original_total = @order.grand_total
       @line_item.destroy
       new_total = @order.grand_total

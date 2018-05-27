@@ -71,6 +71,16 @@ Seeding
 $ rails db:seed
 ```
 
+## Running the tests
+
+RSpec, in conjunction with Capybara and FactoryBot, are used in this project as the testing framework.
+
+Running test
+
+```
+$ bundle exec rspec
+```
+
 ## Built With
 
 * Ruby on Rails - The web framework

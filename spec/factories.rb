@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :user do
     email 'customer@example.com'
     password 'customer123'
-    password_confirmation 'customer'
+    password_confirmation 'customer123'
   end
 
   factory :free_shipping_promotion, class: 'Promotion' do
