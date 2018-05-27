@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20180527044547) do
   create_table "orders_promotions", id: false, force: :cascade do |t|
     t.bigint "order_id", null: false
     t.bigint "promotion_id", null: false
+    t.index ["order_id", "promotion_id"], name: "index_orders_promotions_on_order_id_and_promotion_id", unique: true
     t.index ["order_id"], name: "index_orders_promotions_on_order_id"
     t.index ["promotion_id"], name: "index_orders_promotions_on_promotion_id"
   end
