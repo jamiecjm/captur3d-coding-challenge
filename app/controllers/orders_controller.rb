@@ -13,14 +13,18 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
-    @line_items = @order.line_items
+    if @order
+      @line_items = @order.line_items
+    else
+      redirect_back fallback_location: '/', notice: 'Order was not found'
+    end
   end
 
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order
-      @order = Order.find(params[:id])
+      @order = Order.find_by(id: params[:id], order_status: 'Completed')
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

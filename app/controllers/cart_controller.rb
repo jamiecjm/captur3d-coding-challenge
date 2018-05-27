@@ -18,7 +18,7 @@ class CartController < ApplicationController
       session[:order_id] = nil
       redirect_to user_order_path(user_id: current_user,id: @order), success: 'Order was successfully placed'
     else
-      redirect_back fallback_location: checkout_path, error: error_message
+      render :show, error: @order.errors.full_messages.join('\n')
     end
   end
 

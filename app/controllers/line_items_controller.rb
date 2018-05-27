@@ -7,10 +7,10 @@ class LineItemsController < ApplicationController
     @line_item = @order.line_items.find_or_initialize_by(cardboard_id: line_item_params[:cardboard_id])
     @line_item.quantity += line_item_params[:quantity].to_i
     if @line_item.save
-      @order.save
       session[:order_id] = @order.id
+      redirect_back fallback_location: '/', notice: 'Item was successfully added to cart.'
     else
-
+      redirect_back fallback_location: '/', error: @line_item.errors.full_messages.join('\n')
     end
   end
 
