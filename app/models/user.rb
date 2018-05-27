@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 
-   has_many :orders, primary_key: :email, foreign_key: :email
-   
+   has_many :orders
+
 end

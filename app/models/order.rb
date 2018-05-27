@@ -1,14 +1,12 @@
 class Order < ApplicationRecord
 
-  belongs_to :user, primary_key: :email, foreign_key: :email, optional: true
+  belongs_to :user, optional: true
   has_many :line_items, dependent: :destroy
   has_many :cardboards, through: :line_items
 
   enum order_status: ['In Progress': 0, 'Completed': 1]
 
   before_save :price_calculation
-
-  private
 
   def calc_item_count
     self.item_count = line_items.sum(:quantity)
@@ -25,7 +23,7 @@ class Order < ApplicationRecord
   end
 
   def calc_grand_total
-    self.grand_total = item_count + item_total + shipment_total + promo_total
+    self.grand_total = item_total + shipment_total + promo_total
   end
 
   def price_calculation
