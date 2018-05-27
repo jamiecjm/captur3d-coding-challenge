@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(version: 20180527044547) do
   create_table "promotions", force: :cascade do |t|
     t.integer "promotion_type", null: false
     t.decimal "discount_amount", precision: 10, scale: 2, default: "0.0", null: false
-    t.string "requirement_field"
-    t.string "requirement_operator", default: "mt"
+    t.integer "requirement_field", default: 0, null: false
+    t.integer "requirement_operator", default: 0, null: false
     t.integer "requirement_amount", default: 0, null: false
     t.text "description"
     t.datetime "created_at", null: false

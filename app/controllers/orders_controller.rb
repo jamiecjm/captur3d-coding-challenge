@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
     end
 
     def current_user_only
-      if params[:user_id] != current_user.id
+      if params[:user_id].to_i != current_user.id
         redirect_back fallback_location: '/', notice: 'You are not allowed to perform this action.'
       end
     end

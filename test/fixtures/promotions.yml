@@ -5,8 +5,8 @@
 #  id                   :bigint(8)        not null, primary key
 #  promotion_type       :integer          not null
 #  discount_amount      :decimal(10, 2)   default(0.0), not null
-#  requirement_field    :string
-#  requirement_operator :string           default("mt")
+#  requirement_field    :integer          default("id"), not null
+#  requirement_operator :integer          default("mt"), not null
 #  requirement_amount   :integer          default(0), not null
 #  description          :text
 #  created_at           :datetime         not null
