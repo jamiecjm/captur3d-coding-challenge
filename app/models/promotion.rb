@@ -25,6 +25,12 @@ class Promotion < ApplicationRecord
   # lt = less than, lteq = less than or equal to
   enum requirement_operator: ['mt', 'mteq', 'eq', 'lt', 'lteq']
 
+  validates :promotion_type, presence: true
+  validates :discount_amount, presence: true
+  validates :requirement_field, presence: true
+  validates :requirement_operator, presence: true
+  validates :requirement_amount, presence: true
+
   def operator_to_symbol
     case requirement_operator
       when 'mt'
