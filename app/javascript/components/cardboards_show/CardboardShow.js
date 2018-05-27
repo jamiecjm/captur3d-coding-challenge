@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import AddToCart from './AddToCart'
-import Navbar from './Navbar'
 
 class CardboardShow extends React.Component {
 
