@@ -8,6 +8,8 @@ class LineItemList extends React.Component {
     this.state = {
       line_items: this.props.line_items
     }
+
+    this.handleInputChange = this.handleInputChange.bind(this)
   }
 
   handleClick(line_item_id){
@@ -20,13 +22,19 @@ class LineItemList extends React.Component {
     });
   }
 
+  handleInputChange(obj){
+    this.props.onInputChange(obj);
+  }
+
   render () {
     return (
       <React.Fragment>
-            {this.props.line_items.map(function(line_item){
+            {this.state.line_items.map(function(line_item){
               return(
                 <tr className='cart-line-item' key={line_item.id}>
-                  <LineItem line_item={line_item} onCrossClick={this.handleClick}/>
+                  <LineItem line_item={line_item}
+                  onCrossClick={this.handleClick}
+                  onInputChange={this.handleInputChange}/>
                 </tr>
               )
             }, this)}

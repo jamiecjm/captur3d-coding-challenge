@@ -5,11 +5,8 @@ import CartMeta from './CartMeta'
 
 class NormalCart extends React.Component {
 
-  constructor(props){
-    super(props);
-    this.state = {
-      cart_metas: this.props.cart_metas
-    }
+  handleInputChange(obj){
+    this.props.onInputChange(obj);
   }
 
   render () {
@@ -25,10 +22,10 @@ class NormalCart extends React.Component {
             </tr>
           </thead>
           <tbody>
-            <LineItemList line_items={this.props.line_items} />
+            <LineItemList line_items={this.props.line_items} onInputChange={this.handleInputChange.bind(this)}/>
           </tbody>
         </table>
-        <CartMeta cart_metas={this.state.cart_metas} />
+        <CartMeta cart_metas={this.props.cart_metas} />
         <span className='clear'></span>
       </React.Fragment>
     );
