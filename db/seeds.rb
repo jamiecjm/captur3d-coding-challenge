@@ -13,3 +13,6 @@ Cardboard.create!(cardboard_type: 'High Quality', price: 20)
 # Sample promotions data
 Promotion.create!(promotion_type: 0, requirement_field: 'item_count', requirement_operator: 'mteq', requirement_amount: 10, description: 'Free shipping on orders over or equal to 10 items')
 Promotion.create!(promotion_type: 1, discount_amount: 10, requirement_field: 'item_count', requirement_operator: 'mt', requirement_amount: 20, description: '10% discount on orders over 20 items')
+
+
+Customer.create!(email: 'customer@example.com', password: 'password', password_confirmation: 'password')
