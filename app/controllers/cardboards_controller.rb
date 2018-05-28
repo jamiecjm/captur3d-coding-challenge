@@ -4,14 +4,17 @@ class CardboardsController < ApplicationController
   # GET /cardboards
   # GET /cardboards.json
   def index
-    @cardboards = Cardboard.all.map{|cardboard| cardboard.attributes.merge(url: cardboard_path(cardboard.id))}
+    @cardboards = Cardboard.all.map{|cardboard| cardboard.attributes.merge(
+      {
+        url: cardboard_path(cardboard.id)
+      }
+    )}
   end
 
   # GET /cardboards/1
   # GET /cardboards/1.json
   def show
   end
-
 
   private
     # Use callbacks to share common setup or constraints between actions.

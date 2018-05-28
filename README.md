@@ -27,6 +27,9 @@ A simple VR cardboard ordering system built with Ruby on Rails and ReactJS.
 * User should be able to view their shopping cart
 * User should be able to login to view their placed orders
 
+## Screenshots
+![Browsing Page](/app/assets/images/BrowsingPage.png)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.

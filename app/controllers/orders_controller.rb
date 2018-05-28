@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
 
       @order_metas = current_order_metas
 
-      @item_count = current_order.item_count
+      @item_count = @order.item_count
     else
       redirect_back fallback_location: '/', notice: 'Order was not found'
     end

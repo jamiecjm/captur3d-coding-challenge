@@ -1,2 +1,2 @@
-<h1>Order #<%=@order.id%> (@item_count)</h1>
+<h1>Order #<%=@order.id%> (<%=@item_count%>)</h1>
 <%= react_component 'orders/show/OrderShow', line_items: @line_items, order_metas: @order_metas%>

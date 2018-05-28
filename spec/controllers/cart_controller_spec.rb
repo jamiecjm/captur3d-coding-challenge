@@ -17,7 +17,8 @@ RSpec.describe CartController, type: :controller do
       @line_items = [@line_item].map{|line_item| line_item.attributes.merge(
         {
           cardboard_type: line_item.cardboard.cardboard_type,
-          cardboard_price: line_item.cardboard.price
+          cardboard_price: line_item.cardboard.price,
+          cardboard_id: line_item.cardboard.id
         }
       )}
       expect(assigns(:line_items)).to eq(@line_items)

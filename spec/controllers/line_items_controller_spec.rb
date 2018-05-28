@@ -36,7 +36,6 @@ RSpec.describe LineItemsController, type: :controller do
       @order.save
       delete :destroy, params: {id: line_item.id}
       expect(assigns(:line_item).destroyed?).to be_truthy
-      expect(response).to redirect_to cart_url
     end
   end
 
