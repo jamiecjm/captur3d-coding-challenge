@@ -18,7 +18,7 @@ class Promotion < ApplicationRecord
   has_and_belongs_to_many :orders
 
   enum promotion_type: ['Free Shipping', 'Fixed Discount Rate', 'Fixed Discount Amount']
-  enum requirement_field: Order.attribute_names
+  enum requirement_field: ['item_count', 'item_total']
 
   # eq = equal
   # mt = more than, mteq = more than or equal to
