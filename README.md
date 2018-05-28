@@ -50,12 +50,17 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Ruby, Rails and Gem version
+Ruby and Rails version
 
 ```
 ruby 2.5.0
-yarn 1.7.0
 Rails 5.0.3
+```
+
+Yarn needed for webpacker gem
+
+```
+$ brew install yarn
 ```
 
 ### Installing
