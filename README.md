@@ -82,20 +82,54 @@ Migrating database
 $ rails db:migrate
 ```
 
-Seeding
+Seeding to get sample data of user, promotions and cardboards
 
 ```
 $ rails db:seed
 ```
 
+Sample User:
+email: customer@example.com
+password: password
+
+Admin:
+email: admin@example.com
+password: password
+
+#### Running the server
+
+```
+$ rails server
+```
+
+#### Visit the website at
+
+http://localhost:3000
+
+#### Visit the admin panel at
+
+http://localhost:3000/admin
+
 ## Running the tests
 
 RSpec, in conjunction with Capybara and FactoryBot, are used in this project as the testing framework.
 
-Running test
+Running the whole test
 
 ```
 $ bundle exec rspec
+```
+
+Running the controller test
+
+```
+$ rspec ./spec/controllers
+```
+
+Running the model test
+
+```
+$ rspec ./spec/models
 ```
 
 ## Built With
