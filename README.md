@@ -28,7 +28,21 @@ A simple VR cardboard ordering system built with Ruby on Rails and ReactJS.
 * User should be able to login to view their placed orders
 
 ## Screenshots
-![Browsing Page](/app/assets/images/BrowsingPage.png)
+
+### Home page / Browsing page
+![Browsing Page](/app/assets/images/BrowsingPage.png | width=600 )
+
+### Shopping Cart
+![Shopping Cart](/app/assets/images/ShoppingCart.png | width=600 )
+
+### Empty Cart
+![Empty Cart](/app/assets/images/EmptyCart.png | width=600 )
+
+### Placed Orders
+![Placed Orders](/app/assets/images/AllPlacedOrders.png | width=600 )
+
+### Completed Order Info Retrieval
+![Completed Order](/app/assets/images/CompletedOrder.png | width=600 )
 
 ## Getting Started
 
