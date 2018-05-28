@@ -1,7 +1,7 @@
 # CAPTUR3D Coding Challenge
 
 A simple VR cardboard ordering system built with Ruby on Rails and ReactJS.
-<br>
+<br><br>
 demo: https://captur3d-challenge.herokuapp.com/
 
 ### Core modules
