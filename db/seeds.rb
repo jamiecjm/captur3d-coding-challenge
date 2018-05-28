@@ -15,4 +15,5 @@ Promotion.create!(promotion_type: 0, requirement_field: 'item_count', requiremen
 Promotion.create!(promotion_type: 1, discount_amount: 10, requirement_field: 'item_count', requirement_operator: 'mt', requirement_amount: 20, description: '10% discount on orders over 20 items')
 
 
-Customer.create!(email: 'customer@example.com', password: 'password', password_confirmation: 'password')
+User.create!(email: 'customer@example.com', password: 'password', password_confirmation: 'password')
+User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password', admin: true)

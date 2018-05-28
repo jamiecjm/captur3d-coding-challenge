@@ -89,11 +89,11 @@ $ rails db:seed
 ```
 
 Sample User:
-email: customer@example.com
+email: customer@example.com,
 password: password
 
 Admin:
-email: admin@example.com
+email: admin@example.com,
 password: password
 
 #### Running the server
