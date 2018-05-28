@@ -10,7 +10,8 @@ class LineItemsController < ApplicationController
       session[:order_id] = @order.id
       redirect_back fallback_location: '/', notice: 'Item was successfully added to cart.'
     else
-      redirect_back fallback_location: '/', error: @line_item.errors.full_messages.join('\n')
+      flash[:error] = @line_item.errors.full_messages.join('\n')
+      redirect_back fallback_location: '/'
     end
   end
 

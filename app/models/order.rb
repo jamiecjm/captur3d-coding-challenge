@@ -77,8 +77,8 @@ class Order < ApplicationRecord
   end
 
   def promotion_applicable?(promotion)
-    order_field = send(promotion.requirement_field)
-    order_field.send(promotion.operator_to_symbol, promotion.requirement_amount)
+    order_field = send(promotion.requirement_field.to_s)
+    order_field&.send(promotion.operator_to_symbol, promotion.requirement_amount)
   end
 
 end
