@@ -11,7 +11,9 @@ class CartController < ApplicationController
       }
     )}
 
-    @cart_metas = current_cart_metas
+    @cart_metas = current_order_metas
+
+    @item_count = current_order.item_count
 
   end
 
@@ -20,7 +22,8 @@ class CartController < ApplicationController
     @order.attributes = {user_id: current_user.id, order_status: 'Completed'}
     if @order.save
       session[:order_id] = nil
-      redirect_to user_order_path(user_id: current_user,id: @order), success: 'Order was successfully placed'
+      flash[:success] = 'Order was placed successfully.'
+      redirect_to user_order_path(user_id: current_user,id: @order)
     else
       render :show, error: @order.errors.full_messages.join('\n')
     end

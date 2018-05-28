@@ -35,9 +35,11 @@
     </nav>
     <%=react_component 'PromotionBanner', promotions: Promotion.all%>
 
-    <main class='container'>
-      <%= flash_messages %>
-      <%= yield %>
+    <main class='main-content'>
+      <div class='container'>
+        <%= flash_messages %>
+        <%= yield %>
+      </div>
     </main>
 
   </body>

@@ -16,7 +16,7 @@ class LineItemsController < ApplicationController
 
   def update
     if @line_item.update(line_item_params)
-      render json: {line_items: current_line_items, cart_metas: current_cart_metas}
+      render json: {line_items: current_line_items, cart_metas: current_order_metas, item_count: current_order.item_count}
     else
       render json: @line_item.errors, status: :unprocessable_entity
     end
@@ -25,7 +25,7 @@ class LineItemsController < ApplicationController
   def destroy
     @line_item.destroy
     if @line_item.destroyed?
-      render json: {line_items: current_line_items, cart_metas: current_cart_metas}
+      render json: {line_items: current_line_items, cart_metas: current_order_metas, item_count: current_order.item_count}
     else
       render json: @line_item.errors, status: :unprocessable_entity
     end

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
 
-  helper_method :current_order, :current_cart_metas, :current_line_items
+  helper_method :current_order, :current_order_metas, :current_line_items
 
   def current_order
     if !session[:order_id].nil?
@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def current_cart_metas
+  def current_order_metas
     [
       {title: 'Subtotal', value: current_order.item_total},
       {title: 'Discount', value: current_order.promo_total},

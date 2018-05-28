@@ -7,7 +7,7 @@ class OrderList extends React.Component {
   render () {
     return (
       <React.Fragment>
-      <table class='table'>
+      <table className='table'>
         <thead>
           <tr>
             <th>Order number</th>

@@ -7,6 +7,7 @@ class EmptyCart extends React.Component {
   render () {
     return (
       <React.Fragment>
+        <h1>Your Cart {'('+this.props.item_count+')'}</h1>
         <div className='alert alert-info'>
           There is no item in your cart
         </div>

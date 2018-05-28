@@ -21,12 +21,9 @@ class OrdersController < ApplicationController
         }
       )}
 
-      @order_metas = [
-        {title: 'Subtotal', value: @order.item_total},
-        {title: 'Discount', value: @order.promo_total},
-        {title: 'Shipping Fee', value: @order.shipment_total},
-        {title: 'Total', value: @order.grand_total}
-      ]
+      @order_metas = current_order_metas
+
+      @item_count = current_order.item_count
     else
       redirect_back fallback_location: '/', notice: 'Order was not found'
     end

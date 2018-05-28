@@ -22,6 +22,7 @@ class NormalCart extends React.Component {
   render () {
     return (
       <React.Fragment>
+      <h1>Your Cart {'('+this.props.item_count+')'}</h1>
         <table className='table cart-line-item-list'>
           <thead>
             <tr>
